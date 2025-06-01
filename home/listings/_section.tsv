@@ -1,40 +1,40 @@
-#sno	level	slug	name	page
-1	1	support-groups	Available Support Groups	
-1.a	2			Virtual
-1.b	2			Physical
-1.c	2			Hybrid
-2	1	directory	Directory of Therapists/ Counselors	
-2.a	2			Geriatric
-2.b	2			Adult
-2.c	2			Adolescent
-2.d	2			Child
-3	1	pwle-speakers	Directory of PWLE Speakers	
-3.a	2			Volunteer
-3.b	2			Paid
-4	1	centers-for-therapy	Centers for Creative and Recreational Therapy	
-5	1	nutritionists-and-dieticians	Mental Health Nutritionists and Dieticians	
-6	1	jobs	Job Opportunities for PWLE or Carers	
-6.a	2	online	Online - Post requirements	
-6.b	2	physical	Physical – Post requirements	
-6.b.i	3			Full-time
-6.b.ii	3			Part-time
-6.b.iii	3			Contract
-6.b.iv	3			Freelance
-7	1	skill-training	Social Skills Training Providers	
-8	1	physical-trainers	Directory of Physical Trainers	
-9	1	care-centers		
-9.a	2			Day-care
-9.b	2			In-patient Care
-9.c	2			Destitute and Homeless
-9.d	2			At-home Nursing
-10	1		Emergency services	
-10.a	2			Transport (By city)
-10.b	2			Paramedical support (By city)
-10.c	2			Organizations Providing Emergency Assistance (By city)
-11	1	legal	Directory of Lawyers and Advocates in Mental Health	
-12	1	funding	Sources of Funding for the Underprivileged	
-12.a	2			Supported Education
-12.b	2			Supported Employment
-12.c	2			Supported Housing
-13	1	matrimony	Postings of Inclusive Matrimony and Partnerships for PWLE	
-14	1	other-resources	Other Important Links	
+#sno	level	slug	name	page	introduction
+1	1	support-groups	Available Support Groups		This section lists contact details of available support groups 
+1.a	2			Virtual	
+1.b	2			Physical	
+1.c	2			Hybrid	
+2	1	directory	Directory of Therapists/ Counselors		This section lists contact details of active therapists
+2.a	2			Geriatric	
+2.b	2			Adult	
+2.c	2			Adolescent	
+2.d	2			Child	
+3	1	pwle-speakers	Directory of PWLE Speakers		This section provides contact details of speakers on mental health
+3.a	2			Volunteer	
+3.b	2			Paid	
+4	1	centers-for-therapy	Centers for Creative and Recreational Therapy		This section lists Centers for Creative and Recreational Therapy
+5	1	nutritionists-and-dieticians	Mental Health Nutritionists and Dieticians		This section lists nutritionists and dieticians for mental health
+6	1	jobs	Job Opportunities for PWLE or Carers		This section curates the availability of jobs for persons with mental illness
+6.a	2	online	Online - Post requirements		
+6.b	2	physical	Physical – Post requirements		
+6.b.i	3			Full-time	
+6.b.ii	3			Part-time	
+6.b.iii	3			Contract	
+6.b.iv	3			Freelance	
+7	1	skill-training	Social Skills Training Providers		This section provides contact details of social skills trainers
+8	1	physical-trainers	Directory of Physical Trainers		This section lists personal trainers for physical health
+9	1	care-centers			This section has the list of care centers for mental illnesses 
+9.a	2			Day-care	
+9.b	2			In-patient Care	
+9.c	2			Destitute and Homeless	
+9.d	2			At-home Nursing	
+10	1	emergency-services	Emergency Services		This is a compilation of emergency services for mental health
+10.a	2			Transport (By city)	
+10.b	2			Paramedical support (By city)	
+10.c	2			Organizations Providing Emergency Assistance (By city)	
+11	1	legal	Directory of Lawyers and Advocates in Mental Health		This section is a listing of lawyers practicing in the area of mental health
+12	1	funding	Sources of Funding for the Underprivileged		This is a collection of fund sources for persons with mental health
+12.a	2			Supported Education	
+12.b	2			Supported Employment	
+12.c	2			Supported Housing	
+13	1	matrimony	Postings of Inclusive Matrimony and Partnerships for PWLE		This section provides information on inclusive matrimony
+14	1	other-resources	Other Important Links		Links to miscellaneous websites and publications

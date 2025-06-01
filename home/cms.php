@@ -1,4 +1,8 @@
 <?php
+variables([
+	'footer-variation' => '-single-widget',
+]);
+
 function enrichThemeVars($vars, $what) {
 	if ($what == 'header' && in_array(variable('node'), ['search', 'searches'])) {
 		$vars['optional-slider'] = replaceItems(getSnippet('search-slider', CORESNIPPET), _getSearchVars(), '##');
