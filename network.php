@@ -1,9 +1,10 @@
 <?php
 disk_include_once(__DIR__ . '/auth-config.php');
 
-if (SITENAME == 'home')
+if (SITENAME == 'intrepid-research')
 	disk_include_once(SITEPATH . '/_demo/_magic.php');
 
+/*
 $staticUrls = [
 	//locals
 	'local-url' => 'http://localhost/networks/intrepid/live/static/',
@@ -12,23 +13,25 @@ $staticUrls = [
 	'live-url' => 'https://intrepid.amadeusweb.site/static/',
 	'live-preview-url' => 'https://preview-intrepid.amadeusweb.site/static/',
 ];
+*/
 
+DEFINE('SITENAMEALIAS', SITENAME == 'intrepid-research' ? 'home' : SITENAME);
 variables([
 	'network-static-folder' => NETWORKPATH . '/',
-	'network-static' => $static = $staticUrls[variable(SITEURLKEY)],
+	'network-static' => $static = replaceItems(variable('assets-url'), [SITENAME . '/' => '']) . 'static/', //TODO: change assets-url to just url when migrating??
 	'site-static-folder' => NETWORKPATH . '/' . SITENAME . '/',
-	'site-static' => $static . SITENAME . '/',
+	'site-static' => $static . SITENAMEALIAS . '/',
 
 	'standalone-sections' => ['what-matters-most', 'general', 'listings', 'my'],
 	//'no-name-in-header-menu' => ['what-matters-most'],
-	'footer-variation' => '-single-widget',
+	'footer-variation' => 'single-widget',
 
 	'link-to-section-home' => true,
 	'no-sections-in-footer' => true,
 	'link-to-site-home' => true,
 	'custom-engage-notes' => true,
 	'dont-show-current-menu' => true,
-	'assistantEmail' => 'assistant+intrepid-demo@amadeusweb.world',
+	'assistantEmail' => 'assistant+intrepid@amadeusweb.world',
 ]);
 
 runExtension('resources');
@@ -72,12 +75,13 @@ function isNonResourceNode($slug, $context) {
 	return true;
 }
 
+DEFINE('GPSE', $pse = 'Google <abbr title="Programmable Search Engine">PSE</abbr>');
 variables($d = [
-	'default-search' => $ds = 'preview',
+	'default-search' => $ds = 'KCL Main',
 	'searches' => [
-		'main' => ['code' => '05b9cd218248f44f0', 'name' => 'Main Site', 'description' => ''],
-		'research' => ['code' => '92ff745007df44075', 'name' => 'Research Orgs', 'description' => ''],
-		$ds => ['code' => '41775c0079ee9410b', 'name' => 'This Demo Site', 'description' => ''],
+		$ds => ['code' => 'e5140db9c9b44406d', 'name' => "Main $pse", 'description' => '&hellip; searches the main DEMO site built for KCL\'s -- Intrepid Research III (PsyRes)'],
+		'partner-research-orgs' => ['code' => '92ff745007df44075', 'name' => 'Partner Research Organizations', 'description' => "&hellip; showcasing $pse by searching SCARF (India) etc"],
+		//$ds => ['code' => '41775c0079ee9410b', 'name' => 'This Demo Site', 'description' => ''],
 	],
 ]);
 
@@ -86,6 +90,7 @@ addStyle(SITENAME, 'network-static--common-assets');
 
 variables([
 	'social' => [
-		[ 'type' => 'linkedin', 'url' => 'https://www.linkedin.com/in/imran-ali-namazi/', 'name' => 'Webmaster' ],
+		[ 'type' => 'fa-brands fa-redhat bg-danger', 'url' => 'https://people.amadeusweb.world/imran/whoami/on-linkedin/', 'name' => 'Who Am I' ],
+		[ 'type' => 'fa-brands fa-linkedin bg-linkedin text-light', 'url' => 'https://www.people.amadeusweb.world/imran/whoami/the-technologist/', 'name' => 'The IT Guy' ],
 	],
 ]);

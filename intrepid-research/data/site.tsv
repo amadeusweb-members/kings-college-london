@@ -7,9 +7,9 @@ siteMenuName	Intrepid III
 |scaffold	search, sitemap
 sections	what-matters-most, general, listings, _demo
 |locals
-local-url	http://localhost/networks/intrepid/live/home/
-local-preview-url	http://localhost/networks/intrepid/home/
+local-url	http://localhost/organizations/kings-college-london/intrepid-research/
+|local-preview-url	http://localhost/networks/intrepid/home/
 |lives
-live-url	https://intrepid.amadeusweb.site/home/
-live-preview-url	https://preview-intrepid.amadeusweb.site/home/
+live-url	https://organizations.amadeusweb.world/kings-college-london/intrepid-research/
+|live-preview-url	https://preview-intrepid.amadeusweb.site/home/
 year	2018

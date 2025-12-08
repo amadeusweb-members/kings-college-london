@@ -7,12 +7,14 @@ DEFINE('EDITOR', 'is-editor');
 DEFINE('SUPERADMIN', 'is-superadmin');
 
 variable('all-roles', [
-	NOTLOGGEDIN => [ 'key' => 'anonymous',   'status' => 'Not Logged In', 'demo-name' => 'Anon' ],
+	NOTLOGGEDIN => [ 'about' => 'Not Logged In',   'status' => 'Not Logged In', 'demo-name' => 'Anon' ],
 //	MEMBER => [ 'key' => 'logged-in',   'status' => 'Member', 'demo-name' => 'Smith' ],
-	CONTRIBUTOR => [ 'key' => 'can-suggest', 'status' => 'Contributing User', 'demo-name' => 'Jack' ],
-	CUSTODIAN => [ 'key' => 'owns-pages',  'status' => 'Dedicated Page Custodian', 'demo-name' => 'David' ],
-	EDITOR => [ 'key' => 'is-editor',   'status' => 'Editorial Team', 'demo-name' => 'Ganesh' ],
-	SUPERADMIN => [ 'key' =>'is-superadmin','status' => 'Webmaster', 'demo-name' => 'Imran' ],
+	CONTRIBUTOR => [ 'about' => 'persons who can suggest additions and edits of General topics and Directory Listings.',
+		'status' => 'Contributing User', 'demo-name' => 'Jack' ],
+	CUSTODIAN => [ 'about' => 'Subject Matter Experts who review and approve suggestions from Contributing Users',
+		'status' => 'Dedicated Page Custodian', 'demo-name' => 'David' ],
+	EDITOR => [ 'about' => 'members approve Contributing User applications, approve new content, appoint Dedicated Page Custodians for new content, and link new content to WMM items.',   'status' => 'Editorial Team', 'demo-name' => 'Ganesh' ],
+	SUPERADMIN => [ 'about' =>'Those who upload approved suggestions etc', 'status' => 'Webmaster', 'demo-name' => 'Imran' ],
 ]);
 
 variable('all-countries', [
