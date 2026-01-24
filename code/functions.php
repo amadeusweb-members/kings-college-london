@@ -1,6 +1,7 @@
 <?php
 disk_include_once(__DIR__ . '/auth-config.php');
 disk_include_once(__DIR__ . '/resources/loader.php');
+disk_include_once(__DIR__ . '/biblios/loader.php');
 
 DEFINE('STATICURL', getDomainLink('', NETWORKNAME . '/static', '', true));
 
@@ -23,10 +24,6 @@ function isNodeWithMenu($slug, $where) {
 		variable('file', $file);
 
 	return true;
-}
-
-function role_is($what) {
-	return $what == NOTLOGGEDIN;
 }
 
 function readSections($where, $limit = null) {

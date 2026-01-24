@@ -42,9 +42,7 @@ if (role_is(NOTLOGGEDIN)) {
 	$op['site-admin'] = 'Site Administration';
 }
 
-if (!count($op)) peDie('15', [$op, $_SESSION]);
-
-return $op;
+if (!count($op))  showDebugging(45, [$op, $_SESSION], true);
 
 $me = variable('all-roles')[variable(USERROLE)];
 variable($menuKey, $me['demo-name'] .  ' (' . $me['status'] . ')');

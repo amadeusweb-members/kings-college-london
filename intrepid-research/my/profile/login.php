@@ -23,7 +23,7 @@ if (!role_is(NOTLOGGEDIN)) {
 	}
 
 	runFeature('engage');
-	_runEngageFromSheet(getPageName(), __DIR__ . '/' . stripExtension(__FILE__) . '.tsv');
+	runEngageFromSheet(getPageName(), __DIR__ . '/' . stripExtension(__FILE__) . '.tsv');
 }
 ?>
 </div>
