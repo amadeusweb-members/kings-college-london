@@ -1,5 +1,6 @@
 <?php
-$block = getThemeBlock('articles', SITEPATH . '/data');
+sectionId('intrepid-home', 'my-4');
+$block = getThemeBlock('articles', SITEPATH . '/data/');
 $filter = '			<li><a href="#" data-filter=".article-introduction">Introduction</a></li>
 			<li><a href="#" data-filter=".article-what-matters-most">What Matters Most</a></li>';
 
@@ -12,7 +13,7 @@ $boxes = textToList(disk_file_get_contents(SITEPATH . '/content/_menu-items.tsv'
 
 foreach ($boxes as $ix => $item) {
 	$title = humanize($item);
-	$image = siteOrNetworkOrAppStatic('blocks/' . $item . '.jpg');
+	$image = staticUrl('blocks/' . $item . '.jpg');
 	$link = pageUrl($item);
 
 	$content = disk_file_get_contents(__DIR__ . '/' . $item . '.md');
@@ -27,7 +28,7 @@ foreach ($boxes as $ix => $item) {
 
 $items = []; //disk_include(SITEPATH . '/what-matters-most/menu.php');
 foreach ($items as $slug => $title) {
-	$image = siteOrNetworkOrAppStatic('what-matters-most/' . (true ? 'wmm-default' : $slug) . '.jpg');
+	$image = staticUrl('what-matters-most/' . (true ? 'wmm-default' : $slug) . '.jpg');
 	$content = ''; //getCodeSnippet('latin-2paras');
 	$link = pageUrl($slug);
 	$type = 'what-matters-most';
@@ -40,7 +41,7 @@ $sectionBlocks = []; /*[
 	'listings' => 'Contact details of useful supporting resources',
 ];*/
 foreach ($sectionBlocks as $slug => $title) {
-	$image = siteOrNetworkOrAppStatic('blocks/_' . $slug . '.jpg');
+	$image = staticUrl('blocks/_' . $slug . '.jpg');
 	$content = ''; //getCodeSnippet('latin-2paras');
 	$link = pageUrl($slug);
 	$type = $slug;
@@ -49,4 +50,4 @@ foreach ($sectionBlocks as $slug => $title) {
 }
 
 echo $block['end'];
-?>
+sectionEnd();

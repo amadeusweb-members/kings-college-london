@@ -1,19 +1,8 @@
 <?php
-disk_include_once(__DIR__ . '/auth-config.php');
+disk_include_once(__DIR__ . '/code/functions.php');
 
 if (SITENAME == 'intrepid-research')
 	disk_include_once(SITEPATH . '/_demo/_magic.php');
-
-/*
-$staticUrls = [
-	//locals
-	'local-url' => 'http://localhost/networks/intrepid/live/static/',
-	'local-preview-url' => 'http://localhost/networks/intrepid/static/',
-	//lives
-	'live-url' => 'https://intrepid.amadeusweb.site/static/',
-	'live-preview-url' => 'https://preview-intrepid.amadeusweb.site/static/',
-];
-*/
 
 DEFINE('SITENAMEALIAS', SITENAME == 'intrepid-research' ? 'home' : SITENAME);
 variables([
@@ -24,7 +13,6 @@ variables([
 
 	'standalone-sections' => ['what-matters-most', 'general', 'listings', 'my'],
 	//'no-name-in-header-menu' => ['what-matters-most'],
-	'footer-variation' => 'single-widget',
 
 	'link-to-section-home' => true,
 	'no-sections-in-footer' => true,
@@ -34,23 +22,16 @@ variables([
 	'assistantEmail' => 'assistant+intrepid@amadeusweb.world',
 ]);
 
-runExtension('resources');
+function beforeSectionSet() {
+	$node = nodeValue();
+	$standalones = variable('standalone-sections');
+	foreach ($standalones as $slug) {
+		$where = SITEPATH . '/' . $slug . '/';
+		$file = $where . $node . '.md';
 
-function before_render_section($slug) {
-	runExtension('biblios'); //cannot run inline as "node" will not be set
-
-	$standalones = variableOr('standalone-sections', []);
-	if (!in_array($slug, $standalones)) return false;
-
-	$node = variable('node');
-	$context = [
-		'section' => $slug,
-		'where' => variable('path') . '/' . $slug . '/',
-		'limit' => -1,
-		'callingFrom'=> 'section-check',
-	];
-
-	if ($slug == $node || isResourceNode($slug, $context) || isNonResourceNode($slug, $context)) {
+		$match = $slug == $node || disk_file_exists($file) || isNodeWithMenu($slug, $where);
+		if (!$match) continue;
+		
 		variables([
 			'section' => $slug,
 			'file' => variableOr('file', variable('path') . '/' . $slug . '/home.php'),
@@ -59,20 +40,6 @@ function before_render_section($slug) {
 		]);
 		return true;
 	}
-	return false;
-}
-
-function isNonResourceNode($slug, $context) {
-	$fol = SITEPATH . '/' . $slug . '/';
-	$file = $fol . 'menu.php';
-	$items = disk_include($file, $context);
-	$node = variable('node');
-
-	if (!isset($items[$node])) return false;
-
-	$fileLookup = variableOr(getSectionKey($slug, FILELOOKUP), []);
-	variable('file', isset($fileLookup[$node]) ? $fol . $fileLookup[$node]['relative-path'] : false);
-	return true;
 }
 
 DEFINE('GPSE', $pse = 'Google <abbr title="Programmable Search Engine">PSE</abbr>');

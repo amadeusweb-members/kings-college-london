@@ -44,6 +44,7 @@ if (role_is(NOTLOGGEDIN)) {
 
 if (!count($op)) peDie('15', [$op, $_SESSION]);
 
+return $op;
 
 $me = variable('all-roles')[variable(USERROLE)];
 variable($menuKey, $me['demo-name'] .  ' (' . $me['status'] . ')');

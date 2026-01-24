@@ -3,12 +3,6 @@ name	IntrepidResearch.org
 byline	INTREPID III: Psychosocial Resources for Persons with Non-Neurological Mental Illness and Their Carers in the Global South
 safeName	intrepid-home
 iconName	Intrepid by KCL
-footer-message	Psychosocial Resources for Care-receivers and their Carers.
-siteMenuName	Intrepid III by KCL
-|scaffold	search, sitemap
-sections	what-matters-most, general, listings, _demo
-
-|locals
 local-url	http://localhost/kings-college-london/intrepid-research/
 live-url	https://amadeusweb.world/kings-college-london/intrepid-research/
-year	2018
+showIn	networks

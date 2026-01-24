@@ -5,8 +5,10 @@ DEFINE('CONTRIBUTOR', 'can-suggest');
 DEFINE('CUSTODIAN', 'owns-pages');
 DEFINE('EDITOR', 'is-editor');
 DEFINE('SUPERADMIN', 'is-superadmin');
+DEFINE('USERROLE', 'is-user');
 
 variable('all-roles', [
+	USERROLE => [],
 	NOTLOGGEDIN => [ 'about' => 'Not Logged In',   'status' => 'Not Logged In', 'demo-name' => 'Anon' ],
 //	MEMBER => [ 'key' => 'logged-in',   'status' => 'Member', 'demo-name' => 'Smith' ],
 	CONTRIBUTOR => [ 'about' => 'persons who can suggest additions and edits of General topics and Directory Listings.',
