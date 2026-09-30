@@ -1,8 +1,12 @@
 #key	value
-name	IntrepidResearch.org
-byline	INTREPID III: Psychosocial Resources for Persons with Non-Neurological Mental Illness and Their Carers in the Global South
-safeName	intrepid-home
-iconName	Intrepid by KCL
-local-url	http://localhost/kings-college-london/intrepid-research/
-live-url	https://amadeusweb.world/kings-college-london/intrepid-research/
-showIn	networks
+name	KCL at DAWN
+byline	Global Commmunity - IntrepidResearch IV
+safeName	kings-college-london
+iconName	KCL's IntrepidResearch
+siteMenuName	KCL Home
+local-url	http://localhost/kings-college-london/
+live-url	https://kings-college-london.amadeusweb.in/
+
+year	1603
+sections	whois
+footer-message	Site for IntrepidResearch IV

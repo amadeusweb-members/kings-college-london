@@ -6,11 +6,6 @@ if (SITENAME == 'intrepid-research')
 
 DEFINE('SITENAMEALIAS', SITENAME == 'intrepid-research' ? 'home' : SITENAME);
 variables([
-	'network-static-folder' => NETWORKPATH . '/',
-	'network-static' => $static = replaceItems(variable('assets-url'), [SITENAME . '/' => '']) . 'static/', //TODO: change assets-url to just url when migrating??
-	'site-static-folder' => NETWORKPATH . '/' . SITENAME . '/',
-	'site-static' => $static . SITENAMEALIAS . '/',
-
 	'standalone-sections' => ['what-matters-most', 'general', 'listings', 'my'],
 	//'no-name-in-header-menu' => ['what-matters-most'],
 
@@ -19,9 +14,10 @@ variables([
 	'link-to-site-home' => true,
 	'custom-engage-notes' => true,
 	'dont-show-current-menu' => true,
-	'assistantEmail' => 'assistant+intrepid@amadeusweb.world',
+	VAREmail => plus_email(VARSystemEmail, 'kcl'),
 ]);
 
+if (SITENAME == 'intrepid-research') {
 function beforeSectionSet() {
 	$node = nodeValue();
 	$standalones = variable('standalone-sections');
@@ -40,7 +36,7 @@ function beforeSectionSet() {
 		]);
 		return true;
 	}
-}
+} }
 
 DEFINE('GPSE', $pse = 'Google <abbr title="Programmable Search Engine">PSE</abbr>');
 variables($d = [
@@ -52,12 +48,11 @@ variables($d = [
 	],
 ]);
 
-addStyle('network', 'network-static--common-assets');
-addStyle(SITENAME, 'network-static--common-assets');
+//addStyle('network', 'network-static--common-assets');
+//addStyle(SITENAME, 'network-static--common-assets');
 
 variables([
-	'social' => [
-		[ 'type' => 'fa-brands fa-redhat bg-danger', 'url' => 'https://people.amadeusweb.world/imran/whoami/on-linkedin/', 'name' => 'Who Am I' ],
-		[ 'type' => 'fa-brands fa-linkedin bg-linkedin text-light', 'url' => 'https://www.people.amadeusweb.world/imran/whoami/the-technologist/', 'name' => 'The IT Guy' ],
-	],
+	socialBuilder::variableName => socialBuilder::create()
+		->addImranPersonal()
+		->getItems(),
 ]);

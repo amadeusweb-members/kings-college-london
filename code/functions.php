@@ -3,9 +3,11 @@ disk_include_once(__DIR__ . '/auth-config.php');
 disk_include_once(__DIR__ . '/resources/loader.php');
 disk_include_once(__DIR__ . '/biblios/loader.php');
 
-DEFINE('STATICURL', getDomainLink('', NETWORKNAME . '/static', '', true));
+DEFINE('STATICURL', (new site(getSheet(__DIR__ . '/../data/site.tsv', 'key'),
+		substr(__DIR__, strlen(ALLSITESROOT))))
+		->getUrl(_getUrlKeySansPreview(), true) . 'static/');
 
-function staticUrl($rel, $where = 'home/') {
+function staticUrl($rel, $where = 'intrepid-research/') {
 	return STATICURL . $where . $rel;
 }
 

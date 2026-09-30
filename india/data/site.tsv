@@ -4,12 +4,10 @@ byline	Leading INTREPID from Chennai
 safeName	intrepid-india
 footer-message	The Indian Chapter of [IntrepidResearch.org](https://intrepidresearch.org)
 siteMenuName	Intrepid India
+iconName	India @ KCL, DAWN
 scaffold	search, sitemap
 sections	about-us
 |locals
-local-url	http://localhost/networks/intrepid/live/india/
-local-preview-url	http://localhost/networks/intrepid/india/
-|lives
-live-url	https://intrepid.amadeusweb.site/india/
-live-preview-url	https://preview-intrepid.amadeusweb.site/india/
+local-url	http://localhost/kings-college-london/india/
+live-url	https://kings-college-london.amadeusweb.in/india/
 year	2021

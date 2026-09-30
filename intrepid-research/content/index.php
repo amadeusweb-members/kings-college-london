@@ -26,7 +26,7 @@ foreach ($boxes as $ix => $item) {
 	echo replaceItems($itemTemplate, compact('type', 'type_r', 'title', 'image', 'content', 'link'), '%');
 }
 
-$items = []; //disk_include(SITEPATH . '/what-matters-most/menu.php');
+$items = disk_include(SITEPATH . '/what-matters-most/menu.php');
 foreach ($items as $slug => $title) {
 	$image = staticUrl('what-matters-most/' . (true ? 'wmm-default' : $slug) . '.jpg');
 	$content = ''; //getCodeSnippet('latin-2paras');
@@ -36,10 +36,10 @@ foreach ($items as $slug => $title) {
 	echo replaceItems($itemTemplate, compact('type', 'type_r', 'title', 'image', 'content', 'link'), '%');
 }
 
-$sectionBlocks = []; /*[
+$sectionBlocks = [
 	'general' => 'Topics that provide useful information',
 	'listings' => 'Contact details of useful supporting resources',
-];*/
+];
 foreach ($sectionBlocks as $slug => $title) {
 	$image = staticUrl('blocks/_' . $slug . '.jpg');
 	$content = ''; //getCodeSnippet('latin-2paras');
